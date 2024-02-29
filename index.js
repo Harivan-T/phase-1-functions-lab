@@ -19,22 +19,22 @@ function calculatesFarePrice(startBlock, endBlock) {
     const feetTravelled = distanceTravelledInFeet(startBlock, endBlock);
 
     if (feetTravelled <= 400) {
-        return 0; // Free sample
+        return 0; 
     } else if (feetTravelled > 400 && feetTravelled <= 2000) {
-        return (feetTravelled - 400) * 0.02; // 2 cents per foot after the first 400 feet
+        return (feetTravelled - 400) * 0.02; 
     } else if (feetTravelled > 2000 && feetTravelled <= 2500) {
-        return 25; // $25 for distances over 2000 feet
+        return 25; 
     } else {
-        return 'cannot travel that far'; // Cannot travel over 2500 feet
+        return 'cannot travel that far'; 
     }
 }
 
 // Testing the function
-console.log(calculatesFarePrice(34, 38)); // Output: 8.48 ([(4 * 264) - 400] * 0.02)
-console.log(calculatesFarePrice(34, 42)); // Output: 25 (2000 - 400) * 0.02
-console.log(calculatesFarePrice(34, 50)); // Output: 'Cannot travel more than 2500 feet'
+console.log(calculatesFarePrice(34, 38)); 
+console.log(calculatesFarePrice(34, 42)); 
+console.log(calculatesFarePrice(34, 50)); 
 
 // Testing the functions
-console.log(distanceFromHqInBlocks(50)); // Output: 8
-console.log(distanceFromHqInFeet(50));   // Output: 2112 (8 * 264)
-console.log(distanceTravelledInFeet(34, 38)); // Output: 1056 (4 * 264)
+console.log(distanceFromHqInBlocks(50)); 
+console.log(distanceFromHqInFeet(50));   
+console.log(distanceTravelledInFeet(34, 38));
